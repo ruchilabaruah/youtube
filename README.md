@@ -1,1 +1,6 @@
-Trying to create a clone of Youtube here.
+## Trying to create a clone of Youtube here.
+
+- Created app with create-react-app
+- Installed Tailwind 3 with the postcss setup
+- Created a skeleton of all components needed overall
+- Created the Header
