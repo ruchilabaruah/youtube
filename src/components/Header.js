@@ -1,11 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../store/appSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
     <div className="grid grid-flow-col p-2 m-2 shadow-lg">
       <div className="flex col-span-1">
         <img
-          className="h-8"
+          onClick={toggleMenuHandler}
+          className="h-8 cursor-pointer"
           src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png"
           alt="hamburger-icon"
         />
