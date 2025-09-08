@@ -10,10 +10,10 @@ const VideoCard = ({ info }) => {
   const formattedTimeStamp = timeAgo(publishedAt);
 
   return (
-    <div className="p-4 m-2 shadow-lg w-80">
+    <div className="p-4 m-2 shadow-lg">
       <img
         className="rounded-lg"
-        src={thumbnails?.medium?.url}
+        src={thumbnails?.maxres?.url}
         alt="thumbnail"
       />
       <ul>

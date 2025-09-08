@@ -8,3 +8,5 @@
 - Set up store
 - Toggle sidebar
 - Build the main container with buttons and videos
+- Configure React router
+- Implement watch page
