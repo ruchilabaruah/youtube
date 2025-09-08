@@ -25,7 +25,7 @@ const Header = () => {
         />
       </div>
       <div className="col-span-10">
-        <div class="flex justify-center">
+        <div className="flex justify-center">
           <input
             type="text"
             className="w-1/2 border border-gray-400 p-2 rounded-l-full"
