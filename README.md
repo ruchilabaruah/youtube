@@ -10,3 +10,5 @@
 - Build the main container with buttons and videos
 - Configure React router
 - Implement watch page
+
+- Install firebase and deploy setup
