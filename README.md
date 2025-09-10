@@ -14,3 +14,4 @@
 - Install firebase and deploy setup
 - Search functionality implementation with debouncing
 - Improve performance by caching suggestions in store and make API call only if the API has not been called before with the same search text
+- Comments section supporting infinite nesting
