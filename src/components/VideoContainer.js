@@ -9,7 +9,6 @@ const VideoContainer = () => {
   const getPopularVideos = async () => {
     const response = await fetch(YT_POPULAR_VIDEOS_URL);
     const json = await response.json();
-    console.log("Result: ", json);
 
     setPopularVideos(json.items);
   };
@@ -22,7 +21,7 @@ const VideoContainer = () => {
     <div className="grid grid-cols-3 gap-4">
       {popularVideos &&
         popularVideos.map((video) => (
-          <Link id={video.id} to={"/watch?v=" + video.id}>
+          <Link key={video.id} to={"/watch?v=" + video.id}>
             <VideoCard info={video} />
           </Link>
         ))}
