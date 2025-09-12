@@ -31,7 +31,7 @@ const WatchPage = () => {
         ></iframe>
         <CommentsContainer />
       </div>
-      <div className="w-full h-[600px]">
+      <div className="w-full h-[600px] border border-black rounded-lg">
         <LiveChat />
       </div>
     </div>
