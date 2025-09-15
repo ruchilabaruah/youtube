@@ -1,4 +1,5 @@
 import React from "react";
+import { DISLIKE, LIKE } from "../utils/constants";
 
 const Comment = ({ data }) => {
   return (
@@ -12,6 +13,10 @@ const Comment = ({ data }) => {
         <div className="mx-4">
           <div className="font-bold">{data.name}</div>
           <div>{data.comment}</div>
+          <div className="flex">
+            <img src={LIKE} alt="like" className="my-2 w-6 h-6" />
+            <img src={DISLIKE} alt="like" className="my-2 ml-4 w-6 h-6" />
+          </div>
         </div>
       </div>
     </div>

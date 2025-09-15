@@ -8,7 +8,7 @@ const CommentsList = ({ comments }) => {
     <div className="my-4">
       {comments.map((comment) => (
         <>
-          <Comment data={comment} />
+          <Comment data={comment} key={comment} />
           <div className="mx-4 border-l-2 border-gray-400">
             {comment.replies && (
               <div className="mx-2">

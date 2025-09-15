@@ -15,3 +15,9 @@ export const USER_ICON =
 
 export const SEARCH_SUGGESTIONS =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+export const LIKE =
+  "https://img.icons8.com/?size=100&id=82788&format=png&color=000000";
+
+export const DISLIKE =
+  "https://img.icons8.com/?size=100&id=15957&format=png&color=000000";
