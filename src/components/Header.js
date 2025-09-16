@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../store/appSlice";
 import { addSuggestionsToStore } from "../store/searchSlice";
 import {
+  GO_BACK,
   HAMBURGER_ICON,
+  SEARCH_ICON,
   SEARCH_SUGGESTIONS,
   USER_ICON,
   YT_LOGO,
@@ -15,6 +17,7 @@ const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [isMobileSearch, setIsMobileSearch] = useState(false);
 
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
@@ -63,27 +66,57 @@ const Header = () => {
 
   return (
     <div className="grid grid-flow-col p-2 m-2 shadow-lg">
-      <div className="flex col-span-1">
-        <img
-          onClick={toggleMenuHandler}
-          className="h-8 cursor-pointer"
-          src={HAMBURGER_ICON}
-          alt="hamburger-icon"
-        />
-        <img className="h-8 ml-6" src={YT_LOGO} alt="youtube-logo" />
-      </div>
+      {!isMobileSearch && (
+        <div className="flex col-span-1">
+          <img
+            onClick={toggleMenuHandler}
+            className="h-8 cursor-pointer"
+            src={HAMBURGER_ICON}
+            alt="hamburger-icon"
+          />
+          <img className="h-8 ml-6" src={YT_LOGO} alt="youtube-logo" />
+        </div>
+      )}
       <div className="col-span-10">
-        <div>
+        <div className="flex">
           <input
             value={searchText}
             type="text"
-            className="w-1/2 border border-gray-400 p-2 rounded-l-full"
+            className={`w-1/2 border border-gray-400 p-2 rounded-l-full hidden md:inline-block `}
             onChange={(e) => setSearchText(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setShowSuggestions(false)}
           />
-          <button className="border border-gray-400 p-2 rounded-r-full">
-            🔍
+          <button className="border border-gray-400 p-2 hidden md:inline-block md:rounded-r-full flex items-center justify-center">
+            <img className="w-4 h-4" src={SEARCH_ICON} alt="search-icon" />
+          </button>
+
+          {/** Mobile view */}
+          {isMobileSearch && (
+            <button
+              className="p-2 flex items-center justify-center"
+              onClick={() => setIsMobileSearch(false)}
+            >
+              <img className="w-8 h-8 mr-4" src={GO_BACK} alt="go-back" />
+            </button>
+          )}
+          {isMobileSearch && (
+            <input
+              value={searchText}
+              type="text"
+              className={`w-1/2 border border-gray-400 p-2 rounded-l-full`}
+              onChange={(e) => setSearchText(e.target.value)}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setShowSuggestions(false)}
+            />
+          )}
+          <button
+            className={`border border-gray-400 p-2  md:hidden flex items-center justify-center ${
+              isMobileSearch ? "rounded-r-full" : "ml-4 rounded-full"
+            }`}
+            onClick={() => setIsMobileSearch(true)}
+          >
+            <img className="w-4 h-4" src={SEARCH_ICON} alt="search-icon" />
           </button>
         </div>
         {showSuggestions && searchText && (
@@ -101,9 +134,15 @@ const Header = () => {
           </div>
         )}
       </div>
-      <div className="col-span-1">
-        <img className="h-8 justify-self-end" src={USER_ICON} alt="user-icon" />
-      </div>
+      {!isMobileSearch && (
+        <div className="col-span-1">
+          <img
+            className="h-8 justify-self-end"
+            src={USER_ICON}
+            alt="user-icon"
+          />
+        </div>
+      )}
     </div>
   );
 };

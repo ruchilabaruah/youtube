@@ -21,3 +21,9 @@ export const LIKE =
 
 export const DISLIKE =
   "https://img.icons8.com/?size=100&id=15957&format=png&color=000000";
+
+export const SEARCH_ICON =
+  "https://img.icons8.com/?size=100&id=132&format=png&color=000000";
+
+export const GO_BACK =
+  "https://img.icons8.com/?size=100&id=39776&format=png&color=000000";

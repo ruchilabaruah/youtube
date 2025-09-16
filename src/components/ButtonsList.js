@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const ButtonsList = () => {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap gap-1 md:gap-0">
       <Button name="All" />
       <Button name="Movies" />
       <Button name="Javascript" />
