@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "ruchila-yt"
+    "staging": "jollywood-87c1a",
+    "default": "jollywood-87c1a"
   },
   "targets": {},
   "etags": {}
